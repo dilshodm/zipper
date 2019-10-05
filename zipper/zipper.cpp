@@ -114,8 +114,9 @@ namespace zipper {
 			if (nameInZip.empty())
 				return false;
 
-			if (flags & Zipper::Faster) compressLevel = 1;
-			if (flags & Zipper::Better) compressLevel = 9;
+                        if (flags & Zipper::Faster) compressLevel = 1;
+                        if (flags & Zipper::Medium) compressLevel = 6;
+                        if (flags & Zipper::Better) compressLevel = 9;
 
 			zip64 = (int)isLargeFile(input_stream);
 			if (password.empty())
